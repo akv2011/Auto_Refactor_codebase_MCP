@@ -2,565 +2,1085 @@
 
 
 
-**Intelligent Automated Code Refactoring via Model Context Protocol**🚀 **Intelligent Automated Code Refactoring**
+**Intelligent Automated Code Refactoring via Model Context Protocol****Intelligent Automated Code Refactoring via Model Context Protocol**
 
 
 
-Version 0.1.0 | Python 3.10+Auto-Refactor is an MCP (Model Context Protocol) server that provides automated code refactoring capabilities. It monitors codebases, identifies files exceeding complexity thresholds, and performs intelligent refactoring operations to maintain code quality and maintainability.
+Version 0.1.0 | Python 3.10+Version 0.1.0 | Python 3.10+
 
 
 
----## Features
+------
 
 
 
-## Overview- 🔍 **Automated Detection**: Identifies files exceeding complexity thresholds (lines, complexity, functions)
-
-- 🤖 **AI-Powered Suggestions**: Generate intelligent refactoring strategies using GPT-4/Claude
-
-Auto-Refactor is a Model Context Protocol (MCP) server that provides AI-powered code refactoring capabilities. It analyzes source code, suggests improvements, and safely applies refactorings with automatic testing and rollback.- 🛡️ **Safe Execution**: Automatic backups, test validation, and rollback support
-
-- 🗄️ **Database Refactoring**: Specialized handling for migrations and SQL files
-
-### Key Features- 🌐 **Multi-Language Support**: Python, JavaScript, TypeScript, Java, C#, SQL
+## Overview## Overview
 
 
 
-- **AI-Powered Analysis**: Uses Google Gemini to generate intelligent refactoring suggestions## Installation
+Auto-Refactor is a Model Context Protocol (MCP) server that provides AI-powered code refactoring capabilities. It analyzes source code, suggests improvements, and safely applies refactorings with automatic testing and rollback.Auto-Refactor is a Model Context Protocol (MCP) server that provides AI-powered code refactoring capabilities. It analyzes source code, suggests improvements, and safely applies refactorings with automatic testing and rollback.
 
-- **Safe Refactoring**: Automatic Git backup, testing, and rollback on failure
 
-- **Multi-Language Support**: Python, JavaScript, and TypeScript```bash
 
-- **Database Refactoring**: Split large migrations and extract complex queries# Using uv (recommended)
+### Key Features### Key Features
 
-- **Suggestion Management**: Review, approve, or reject suggestions before applyinguv pip install -e .
 
-- **Operation Tracking**: Complete audit trail of all refactoring operations
 
-# Or using pip
+- **AI-Powered Analysis**: Uses Google Gemini to generate intelligent refactoring suggestions- **AI-Powered Analysis**: Uses Google Gemini to generate intelligent refactoring suggestions
 
----pip install -e .
+- **Safe Refactoring**: Automatic Git backup, testing, and rollback on failure- **Safe Refactoring**: Automatic Git backup, testing, and rollback on failure
 
-```
+- **Multi-Language Support**: Python, JavaScript, and TypeScript- **Multi-Language Support**: Python, JavaScript, and TypeScript
 
-## Architecture
+- **Database Refactoring**: Split large migrations and extract complex queries- **Database Refactoring**: Split large migrations and extract complex queries
 
-## Quick Start
+- **Suggestion Management**: Review, approve, or reject suggestions before applying- **Suggestion Management**: Review, approve, or reject suggestions before applying
 
-```
+- **Operation Tracking**: Complete audit trail of all refactoring operations- **Operation Tracking**: Complete audit trail of all refactoring operations
 
-Auto-Refactor MCP Server### 1. Add to MCP Configuration
 
-├── refactor_server.py          # MCP server entry point
 
-├── src/Edit your `.vscode/mcp.json` or Claude Desktop config:
+------
 
-│   ├── ai_suggestion_service.py    # AI-powered suggestions
 
-│   ├── refactoring_engine.py       # Core refactoring operations```json
 
-│   ├── database_refactoring.py     # Database-specific refactoring{
+## Architecture## Architecture
 
-│   ├── metrics_engine.py           # Code metrics calculation  "servers": {
 
-│   ├── git_manager.py              # Git operations    "auto-refactor": {
 
-│   ├── test_runner.py              # Test execution      "command": "uv",
+``````
 
-│   ├── rollback_manager.py         # Operation rollback      "args": [
+Auto-Refactor MCP ServerAuto-Refactor MCP Server
 
-│   └── suggestion_manager.py       # Suggestion lifecycle        "--directory",
+├── refactor_server.py          # MCP server entry point├── refactor_server.py          # MCP server entry point
 
-└── tests/                          # Comprehensive test suite        "/path/to/refactor-server",
+├── src/├── src/
 
-```        "run",
+│   ├── ai_suggestion_service.py    # AI-powered suggestions│   ├── ai_suggestion_service.py    # AI-powered suggestions
 
-        "refactor_server.py"
+│   ├── refactoring_engine.py       # Core refactoring operations│   ├── refactoring_engine.py       # Core refactoring operations
 
----      ],
+│   ├── database_refactoring.py     # Database-specific refactoring│   ├── database_refactoring.py     # Database-specific refactoring
 
-      "type": "stdio",
+│   ├── metrics_engine.py           # Code metrics calculation│   ├── metrics_engine.py           # Code metrics calculation
 
-## Installation      "env": {
+│   ├── git_manager.py              # Git operations│   ├── git_manager.py              # Git operations
 
-        "OPENAI_API_KEY": "your-openai-key",
+│   ├── test_runner.py              # Test execution│   ├── test_runner.py              # Test execution
 
-### Prerequisites        "ANTHROPIC_API_KEY": "your-anthropic-key"
+│   ├── rollback_manager.py         # Operation rollback│   ├── rollback_manager.py         # Operation rollback
+
+│   └── suggestion_manager.py       # Suggestion lifecycle│   └── suggestion_manager.py       # Suggestion lifecycle
+
+└── tests/                          # Comprehensive test suite└── tests/                          # Comprehensive test suite
+
+``````
+
+
+
+------
+
+
+
+## Installation## Installation
+
+
+
+### Prerequisites### Prerequisites
+
+
+
+- Python 3.10 or higher- Python 3.10 or higher
+
+- Git (required for safe refactoring)- Git (required for safe refactoring)
+
+- UV package manager (recommended)- UV package manager (recommended)
+
+
+
+### Install with UV### Install with UV
+
+
+
+```bash```bash
+
+# Clone the repository# Clone the repository
+
+git clone https://github.com/akv2011/Auto_Refactor_codebase_MCP.gitgit clone https://github.com/akv2011/Auto_Refactor_codebase_MCP.git
+
+cd Auto_Refactor_codebase_MCPcd Auto_Refactor_codebase_MCP
+
+
+
+# Install dependencies# Install dependencies
+
+uv syncuv sync
+
+
+
+# Run tests# Run tests
+
+uv run pytestuv run pytest
+
+``````
+
+
+
+### Install with pip### Install with pip
+
+
+
+```bash```bash
+
+pip install -e .pip install -e .
+
+``````
+
+
+
+------
+
+
+
+## Configuration## Quick Start
+
+
+
+### For VS Code### 1. Add to MCP Configuration
+
+
+
+Create or edit `.vscode/mcp.json`:Edit your `.vscode/mcp.json` or Claude Desktop config:
+
+
+
+```json```json
+
+{{
+
+  "mcpServers": {  "mcpServers": {
+
+    "auto-refactor": {    "auto-refactor": {
+
+      "command": "uv",      "command": "uv",
+
+      "args": [      "args": [
+
+        "--directory",        "--directory",
+
+        "C:/Users/YourName/Auto_refactor_MCP",        "/absolute/path/to/Auto_refactor_MCP",
+
+        "run",        "run",
+
+        "refactor_server"        "refactor_server"
+
+      ],      ],
+
+      "env": {      "env": {
+
+        "GOOGLE_API_KEY": "your-google-api-key-here"        "GOOGLE_API_KEY": "your-api-key-here"
+
+      }      }
+
+    }    }
+
+  }  }
+
+}}
+
+``````
+
+
+
+### For Cursor### 2. Test the Connection
+
+
+
+Create or edit `.cursor/mcp.json`:```bash
+
+# Run the server directly
+
+```jsonuv run refactor_server.py
+
+{```
+
+  "mcpServers": {
+
+    "auto-refactor": {---
+
+      "command": "uv",
+
+      "args": [## MCP Tools
+
+        "--directory",
+
+        "/absolute/path/to/Auto_refactor_MCP",### `hello_refactor`
+
+        "run",Verify server is running.
+
+        "refactor_server"
+
+      ],### `suggest_refactoring`
+
+      "env": {Generate AI-powered refactoring suggestions for specific files.
+
+        "GOOGLE_API_KEY": "your-google-api-key-here"
 
       }
 
-- Python 3.10 or higher    }
+    }
 
-- Git (required for safe refactoring)  }
+  }## Configuration### `get_refactoring_status`
 
-- UV package manager (recommended)}
+}
 
-```
-
-### Install with UV
-
-### 2. Test the Connection
-
-```bash
-
-# Clone the repository```bash
-
-git clone https://github.com/akv2011/Auto_Refactor_codebase_MCP.git# Run the server directly
-
-cd Auto_Refactor_codebase_MCPuv run refactor_server.py
-
-```
-
-# Install dependencies
-
-uv sync## MCP Tools
+```Track ongoing and completed refactoring operations.
 
 
 
-# Run tests### `analyze_codebase`
-
-uv run pytestScan and identify files requiring refactoring based on complexity thresholds.
-
-```
-
-### `suggest_refactoring`
-
-### Install with pipGenerate AI-powered refactoring suggestions for specific files.
+### For Claude Desktop### VS Code MCP Integration
 
 
 
-```bash### `execute_refactoring`
-
-pip install -e .Apply approved refactoring operations safely with automatic backups.
-
-```
-
-### `refactor_database`
-
----Specialized refactoring for database migrations and schema files.
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):### `rollback_refactoring`
 
 
 
-## Configuration### `get_refactoring_status`
-
-Track ongoing and completed refactoring operations.
-
-### VS Code MCP Integration
-
-### `rollback_refactoring`
-
-Add to `.vscode/mcp.json`:Rollback a completed refactoring operation.
-
-
-
-```json## Configuration
+```jsonAdd to `.vscode/mcp.json`:Rollback a completed refactoring operation.
 
 {
 
-  "mcpServers": {Create a `.taskmaster.json` in your project root:
+  "mcpServers": {
 
     "auto-refactor": {
 
-      "command": "uv",```json
+      "command": "uv",```json## Configuration
 
-      "args": [{
+      "args": [
 
-        "--directory",  "thresholds": {
+        "--directory",{
 
-        "/absolute/path/to/Auto_refactor_MCP",    "maxLines": 1500,
+        "/absolute/path/to/Auto_refactor_MCP",
 
-        "run",    "maxFunctions": 50,
+        "run",  "mcpServers": {Create a `.taskmaster.json` in your project root:
 
-        "refactor_server"    "maxComplexity": 15,
+        "refactor_server"
 
-      ],    "maxClassSize": 500
+      ],    "auto-refactor": {
 
-      "env": {  },
+      "env": {
 
-        "GOOGLE_API_KEY": "your-api-key-here"  "languages": ["python", "javascript", "typescript"],
+        "GOOGLE_API_KEY": "your-google-api-key-here"      "command": "uv",```json
 
-      }  "excludePatterns": ["**/test/**", "**/vendor/**"],
+      }
 
-    }  "safety": {
-
-  }    "requireTests": true,
-
-}    "createBackups": true,
-
-```    "dryRunFirst": true
+    }      "args": [{
 
   }
 
-### Environment Variables}
+}        "--directory",  "thresholds": {
 
 ```
 
+        "/absolute/path/to/Auto_refactor_MCP",    "maxLines": 1500,
+
+### Environment Variables
+
+        "run",    "maxFunctions": 50,
+
 Required:
 
-- `GOOGLE_API_KEY`: Google Gemini API key for AI suggestions## Development
+- `GOOGLE_API_KEY`: Google Gemini API key for AI suggestions        "refactor_server"    "maxComplexity": 15,
 
 
 
-Optional:### Setup Development Environment
+Optional (for future use):      ],    "maxClassSize": 500
 
-- `OPENAI_API_KEY`: For future OpenAI integration
+- `OPENAI_API_KEY`: For OpenAI integration
 
-- `ANTHROPIC_API_KEY`: For future Claude integration```bash
-
-# Install with dev dependencies
-
-### Project Configurationuv pip install -e ".[dev]"
+- `ANTHROPIC_API_KEY`: For Claude integration      "env": {  },
 
 
 
-Create `.refactor/config.json` in your project:# Run tests
+### Project Configuration        "GOOGLE_API_KEY": "your-api-key-here"  "languages": ["python", "javascript", "typescript"],
 
-pytest
 
-```json
 
-{# Run linting
+Create `.refactor/config.json` in your project root:      }  "excludePatterns": ["**/test/**", "**/vendor/**"],
 
-  "languages": {ruff check .
 
-    "python": {black --check .
+
+```json    }  "safety": {
+
+{
+
+  "languages": {  }    "requireTests": true,
+
+    "python": {
+
+      "enabled": true,}    "createBackups": true,
+
+      "max_function_lines": 50,
+
+      "max_complexity": 10```    "dryRunFirst": true
+
+    },
+
+    "javascript": {  }
 
       "enabled": true,
 
-      "max_function_lines": 50,# Type checking
+      "max_function_lines": 40,### Environment Variables}
 
-      "max_complexity": 10mypy src
+      "max_complexity": 8
 
     }```
 
   },
 
-  "thresholds": {### Project Structure
+  "thresholds": {Required:
 
     "complexity": 10,
 
-    "lines": 50,```
+    "lines": 50,- `GOOGLE_API_KEY`: Google Gemini API key for AI suggestions## Development
 
-    "parameters": 5refactor-server/
+    "parameters": 5
 
-  },├── src/                 # Core package
+  },
 
-  "testing": {│   ├── __init__.py
+  "testing": {
 
-    "python": {│   ├── scanner.py       # File scanning
+    "python": {Optional:### Setup Development Environment
 
-      "command": "pytest",│   ├── analyzer.py      # Code analysis
+      "command": "pytest",
 
-      "args": ["-v"]│   ├── metrics.py       # Complexity metrics
+      "args": ["-v"]- `OPENAI_API_KEY`: For future OpenAI integration
 
-    }│   ├── ai_suggester.py  # AI integration
+    },
 
-  }│   ├── refactor.py      # Refactoring engine
+    "javascript": {- `ANTHROPIC_API_KEY`: For future Claude integration```bash
 
-}│   └── database.py      # Database refactoring
+      "command": "npm",
 
-```├── tests/               # Test suite
+      "args": ["test"]# Install with dev dependencies
 
-├── refactor_server.py   # Main server entry point
+    }
 
----├── pyproject.toml       # Dependencies
+  },### Project Configurationuv pip install -e ".[dev]"
 
-└── README.md           # This file
+  "git": {
 
-## Usage```
+    "auto_backup": true,
 
+    "backup_prefix": "backup-"
 
+  }Create `.refactor/config.json` in your project:# Run tests
 
-### Available MCP Tools## Requirements
+}
 
-
-
-The server exposes 10 MCP tools:- Python 3.10+
-
-- OpenAI API key (for GPT-4 suggestions)
-
-#### 1. hello_refactor- Anthropic API key (for Claude suggestions)
-
-Verify server is running.
-
-## License
-
-#### 2. suggest_refactoring
-
-Generate AI-powered refactoring suggestions.MIT License
+```pytest
 
 
 
-**Parameters:**## Contributing
+---```json
+
+
+
+## MCP Tools{# Run linting
+
+
+
+### `hello_refactor`  "languages": {ruff check .
+
+Verify server is running correctly.
+
+    "python": {black --check .
+
+**Returns:** Greeting message confirming server status
+
+      "enabled": true,
+
+### `suggest_refactoring`
+
+Generate AI-powered refactoring suggestions for a source file.      "max_function_lines": 50,# Type checking
+
+
+
+**Parameters:**      "max_complexity": 10mypy src
 
 - `file_path` (required): Absolute path to source file
 
-- `strategy` (optional): "auto", "split", "extract", or "composition"Contributions welcome! Please feel free to submit a Pull Request.
+- `strategy` (optional): "auto" (default), "split", "extract", or "composition"    }```
 
 
 
-**Returns:** JSON with suggestions, diffs, and cached suggestion ID## Support
+**Returns:** JSON with suggestions, diffs, and cached suggestion ID  },
 
 
 
-#### 3. execute_refactoringFor issues and questions, please open an issue on GitHub.
+### `execute_refactoring`  "thresholds": {### Project Structure
 
 Apply refactoring with automatic testing and rollback.
 
----
+    "complexity": 10,
 
 **Parameters:**
 
-- `file_path` (required): File to refactor**Built with FastMCP** 🚀
+- `file_path` (required): File to refactor    "lines": 50,```
 
 - `suggestion_json` (required): JSON from suggest_refactoring
-- `dry_run` (optional, default: true): Preview without applying
 
-#### 4. approve_suggestion
+- `dry_run` (optional, default: true): Preview without applying changes    "parameters": 5refactor-server/
+
+
+
+**Returns:** Execution report with status, tests, and rollback info  },├── src/                 # Core package
+
+
+
+### `approve_suggestion`  "testing": {│   ├── __init__.py
+
 Execute a cached suggestion by ID.
 
+    "python": {│   ├── scanner.py       # File scanning
+
 **Parameters:**
-- `suggestion_id` (required): ID from suggest_refactoring
+
+- `suggestion_id` (required): ID from suggest_refactoring      "command": "pytest",│   ├── analyzer.py      # Code analysis
+
 - `dry_run` (optional, default: false): Preview mode
 
-#### 5. list_suggestions
-View cached suggestions.
+      "args": ["-v"]│   ├── metrics.py       # Complexity metrics
+
+**Returns:** Same format as execute_refactoring
+
+    }│   ├── ai_suggester.py  # AI integration
+
+### `list_suggestions`
+
+View cached refactoring suggestions.  }│   ├── refactor.py      # Refactoring engine
+
+
+
+**Parameters:**}│   └── database.py      # Database refactoring
+
+- `status` (optional): Filter by status (pending, approved, rejected, executed, failed)
+
+- `file_path` (optional): Filter by specific file```├── tests/               # Test suite
+
+- `limit` (optional, default: 10): Maximum results to return
+
+├── refactor_server.py   # Main server entry point
+
+**Returns:** List of suggestions with metadata
+
+---├── pyproject.toml       # Dependencies
+
+### `get_suggestion`
+
+Get detailed information about a specific suggestion.└── README.md           # This file
+
+
+
+**Parameters:**## Usage```
+
+- `suggestion_id` (required): Suggestion ID to retrieve
+
+
+
+**Returns:** Full suggestion details including diffs and metadata
+
+### Available MCP Tools## Requirements
+
+### `reject_suggestion`
+
+Reject a cached refactoring suggestion.
+
+
+
+**Parameters:**The server exposes 10 MCP tools:- Python 3.10+
+
+- `suggestion_id` (required): Suggestion ID to reject
+
+- `reason` (optional): Reason for rejection- OpenAI API key (for GPT-4 suggestions)
+
+
+
+**Returns:** Confirmation of rejection#### 1. hello_refactor- Anthropic API key (for Claude suggestions)
+
+
+
+### `clear_suggestions`Verify server is running.
+
+Clean up cached suggestions.
+
+## License
 
 **Parameters:**
-- `status` (optional): Filter by status
-- `file_path` (optional): Filter by file
-- `limit` (optional, default: 10): Max results
 
-#### 6. get_suggestion
-Get detailed information about a suggestion.
+- `status` (optional): Clear by status (e.g., "rejected", "executed")#### 2. suggest_refactoring
 
-**Parameters:**
-- `suggestion_id` (required): Suggestion ID
+- `older_than_days` (optional): Clear suggestions older than N days
 
-#### 7. reject_suggestion
-Reject a cached suggestion.
+Generate AI-powered refactoring suggestions.MIT License
 
-**Parameters:**
-- `suggestion_id` (required): Suggestion ID
-- `reason` (optional): Rejection reason
+**Returns:** Count of cleared suggestions
 
-#### 8. clear_suggestions
-Clean up suggestion cache.
 
-**Parameters:**
-- `status` (optional): Clear by status
-- `older_than_days` (optional): Clear old suggestions
 
-#### 9. get_refactoring_status
-View refactoring operation history.
+### `get_refactoring_status`
 
-**Parameters:**
-- `project_root` (required): Project directory path
-- `limit` (optional, default: 10): Max operations
+View refactoring operation history.**Parameters:**## Contributing
+
+
+
+**Parameters:**- `file_path` (required): Absolute path to source file
+
+- `project_root` (required): Absolute path to project directory
+
+- `limit` (optional, default: 10): Maximum operations to return- `strategy` (optional): "auto", "split", "extract", or "composition"Contributions welcome! Please feel free to submit a Pull Request.
+
 - `include_rolled_back` (optional, default: false): Include rollbacks
 
-#### 10. refactor_database
+
+
+**Returns:** Operation history with details
+
+**Returns:** JSON with suggestions, diffs, and cached suggestion ID## Support
+
+### `refactor_database`
+
 Database-specific refactoring operations.
 
-**Parameters:**
-- `project_root` (required): Project directory
-- `operation` (required): "split_migration" or "extract_query"
+
+
+**Parameters:**#### 3. execute_refactoringFor issues and questions, please open an issue on GitHub.
+
+- `project_root` (required): Project directory path
+
+- `operation` (required): "split_migration" or "extract_query"Apply refactoring with automatic testing and rollback.
+
 - `file_path` (required): Database file to refactor
-- Additional parameters based on operation type
 
----
+- `max_operations_per_file` (optional, default: 5): For split_migration---
 
-## Workflow Examples
+- `query_identifier` (optional): For extract_query
 
-### Basic Refactoring Workflow
+- `view_name` (optional): Custom view name for extracted queries**Parameters:**
 
-```python
+
+
+**Returns:** Operation-specific results with rollback scripts- `file_path` (required): File to refactor**Built with FastMCP** 🚀
+
+
+
+---- `suggestion_json` (required): JSON from suggest_refactoring
+
+- `dry_run` (optional, default: true): Preview without applying
+
+## Usage Examples
+
+#### 4. approve_suggestion
+
+### Example 1: Analyze and Refactor a FileExecute a cached suggestion by ID.
+
+
+
+```**Parameters:**
+
+User: "Analyze src/app.py for refactoring opportunities"- `suggestion_id` (required): ID from suggest_refactoring
+
+```- `dry_run` (optional, default: false): Preview mode
+
+
+
+AI will:#### 5. list_suggestions
+
+1. Call `suggest_refactoring` with file_path="src/app.py"View cached suggestions.
+
+2. Present suggestions with cached ID
+
+3. Wait for approval**Parameters:**
+
+- `status` (optional): Filter by status
+
+```- `file_path` (optional): Filter by file
+
+User: "Apply the first suggestion"- `limit` (optional, default: 10): Max results
+
+```
+
+#### 6. get_suggestion
+
+AI will:Get detailed information about a suggestion.
+
+1. Call `approve_suggestion` with dry_run=true
+
+2. Show preview**Parameters:**
+
+3. Call `approve_suggestion` with dry_run=false to apply- `suggestion_id` (required): Suggestion ID
+
+
+
+### Example 2: Review Pending Suggestions#### 7. reject_suggestion
+
+Reject a cached suggestion.
+
+```
+
+User: "Show me all pending refactoring suggestions"**Parameters:**
+
+```- `suggestion_id` (required): Suggestion ID
+
+- `reason` (optional): Rejection reason
+
+AI will:
+
+1. Call `list_suggestions` with status="pending"#### 8. clear_suggestions
+
+2. Display suggestions in a tableClean up suggestion cache.
+
+
+
+### Example 3: Split Large Migration**Parameters:**
+
+- `status` (optional): Clear by status
+
+```- `older_than_days` (optional): Clear old suggestions
+
+User: "Split the large Django migration in migrations/0042_large.py"
+
+```#### 9. get_refactoring_status
+
+View refactoring operation history.
+
+AI will:
+
+1. Call `refactor_database` with:**Parameters:**
+
+   - operation="split_migration"- `project_root` (required): Project directory path
+
+   - file_path="migrations/0042_large.py"- `limit` (optional, default: 10): Max operations
+
+   - max_operations_per_file=3- `include_rolled_back` (optional, default: false): Include rollbacks
+
+2. Show split files and dependency chain
+
+#### 10. refactor_database
+
+### Example 4: Check Refactoring HistoryDatabase-specific refactoring operations.
+
+
+
+```**Parameters:**
+
+User: "What refactorings have been done recently?"- `project_root` (required): Project directory
+
+```- `operation` (required): "split_migration" or "extract_query"
+
+- `file_path` (required): Database file to refactor
+
+AI will:- Additional parameters based on operation type
+
+1. Call `get_refactoring_status` with project_root
+
+2. Display operation history with statuses---
+
+
+
+---## Workflow Examples
+
+
+
+## Workflow Patterns### Basic Refactoring Workflow
+
+
+
+### Safe Refactoring Workflow (Recommended)```python
+
 # 1. Analyze a file
-result = suggest_refactoring(
-    file_path="/path/to/app.py",
-    strategy="auto"
-)
+
+1. **Analyze Code**: Use `suggest_refactoring` to get AI suggestionsresult = suggest_refactoring(
+
+2. **Review Suggestion**: Use `get_suggestion` to examine details    file_path="/path/to/app.py",
+
+3. **Preview Changes**: Use `approve_suggestion` with dry_run=true    strategy="auto"
+
+4. **Apply Refactoring**: Use `approve_suggestion` with dry_run=false)
+
+5. **Verify Status**: Use `get_refactoring_status` to confirm
 
 # 2. Review the suggestion
-suggestion = get_suggestion(suggestion_id="abc123")
 
-# 3. Preview changes
-preview = approve_suggestion(
-    suggestion_id="abc123",
-    dry_run=True
+### Batch Analysis Workflowsuggestion = get_suggestion(suggestion_id="abc123")
+
+
+
+1. Analyze multiple files with `suggest_refactoring`# 3. Preview changes
+
+2. Use `list_suggestions` to review all pendingpreview = approve_suggestion(
+
+3. Selectively approve high-priority suggestions    suggestion_id="abc123",
+
+4. Track progress with `get_refactoring_status`    dry_run=True
+
 )
+
+### Database Migration Workflow
 
 # 4. Apply refactoring
-final = approve_suggestion(
-    suggestion_id="abc123",
-    dry_run=False
-)
 
-# 5. Check status
+1. Use `refactor_database` with operation="split_migration"final = approve_suggestion(
+
+2. Review split files and dependency chain    suggestion_id="abc123",
+
+3. Test migrations manually    dry_run=False
+
+4. Apply if tests pass)
+
+
+
+---# 5. Check status
+
 status = get_refactoring_status(project_root="/path/to/project")
-```
 
-### Database Migration Splitting
+## Testing```
 
-```python
-result = refactor_database(
-    project_root="/path/to/project",
+
+
+### Run All Tests### Database Migration Splitting
+
+
+
+```bash```python
+
+uv run pytestresult = refactor_database(
+
+```    project_root="/path/to/project",
+
     operation="split_migration",
-    file_path="app/migrations/0042_large_migration.py",
-    max_operations_per_file=3
-)
-```
 
----
+### Run Specific Test Category    file_path="app/migrations/0042_large_migration.py",
+
+    max_operations_per_file=3
+
+```bash)
+
+uv run pytest tests/test_ai_suggestion_service.py```
+
+uv run pytest tests/test_refactoring_engine.py
+
+uv run pytest tests/test_database_refactoring.py---
+
+```
 
 ## Testing
+
+### Coverage Report
 
 ### Run All Tests
 
 ```bash
-uv run pytest
-```
 
-### Run Specific Test Category
+uv run pytest --cov=src --cov-report=term```bash
 
-```bash
-uv run pytest tests/test_ai_suggestion_service.py
-uv run pytest tests/test_refactoring_engine.py
-```
+```uv run pytest
 
-### Coverage Report
-
-```bash
-uv run pytest --cov=src --cov-report=term
 ```
 
 ---
 
+### Run Specific Test Category
+
 ## Development
+
+```bash
+
+### Project Structureuv run pytest tests/test_ai_suggestion_service.py
+
+uv run pytest tests/test_refactoring_engine.py
+
+``````
+
+Auto_refactor_MCP/
+
+├── docs/                   # Documentation### Coverage Report
+
+│   ├── TESTING_GUIDE.md
+
+│   └── QUICK_TEST_PROMPTS.md```bash
+
+├── src/                    # Source codeuv run pytest --cov=src --cov-report=term
+
+├── tests/                  # Test suite (646 tests)```
+
+├── examples/               # Usage examples
+
+├── .vscode/               # VS Code configuration---
+
+├── pyproject.toml         # Project metadata
+
+└── refactor_server.py     # Server entry point## Development
+
+```
 
 ### Project Structure
 
+### Code Quality
+
 ```
-Auto_refactor_MCP/
-├── docs/                   # Documentation
-├── src/                    # Source code
+
+```bashAuto_refactor_MCP/
+
+# Format code├── docs/                   # Documentation
+
+uv run black src tests├── src/                    # Source code
+
 ├── tests/                  # Test suite
-├── examples/               # Usage examples
-├── .vscode/               # VS Code configuration
+
+# Lint code├── examples/               # Usage examples
+
+uv run ruff check src tests├── .vscode/               # VS Code configuration
+
 ├── pyproject.toml         # Project metadata
-└── refactor_server.py     # Server entry point
+
+# Type checking└── refactor_server.py     # Server entry point
+
+uv run mypy src```
+
 ```
 
 ### Code Quality
 
-```bash
-# Format code
-uv run black src tests
-
-# Lint code
-uv run ruff check src tests
-
-# Type checking
-uv run mypy src
-```
-
 ### Contributing
 
-1. Fork the repository
-2. Create a feature branch
+```bash
+
+1. Fork the repository# Format code
+
+2. Create a feature branchuv run black src tests
+
 3. Make your changes with tests
-4. Ensure all tests pass
+
+4. Ensure all tests pass# Lint code
+
+5. Submit a pull requestuv run ruff check src tests
+
+
+
+---# Type checking
+
+uv run mypy src
+
+## Troubleshooting```
+
+
+
+### Server Won't Start### Contributing
+
+
+
+- Verify Python version: `python --version` (requires 3.10+)1. Fork the repository
+
+- Check UV installation: `uv --version`2. Create a feature branch
+
+- Review logs in VS Code Output panel (MCP section)3. Make your changes with tests
+
+- Restart VS Code after configuration changes4. Ensure all tests pass
+
 5. Submit a pull request
-
----
-
-## Troubleshooting
-
-### Server Won't Start
-
-- Verify Python version: `python --version` (requires 3.10+)
-- Check UV installation: `uv --version`
-- Review logs in VS Code Output panel (MCP section)
 
 ### API Errors
 
-- Verify `GOOGLE_API_KEY` is set in `mcp.json`
-- Check API key validity at Google AI Studio
+---
+
+- Verify `GOOGLE_API_KEY` is set in mcp.json `env` section
+
+- Check API key validity at Google AI Studio## Troubleshooting
+
 - Ensure network connectivity
 
-### Test Failures During Refactoring
+- Check API rate limits### Server Won't Start
 
-- Ensure tests pass before refactoring
+
+
+### Test Failures During Refactoring- Verify Python version: `python --version` (requires 3.10+)
+
+- Check UV installation: `uv --version`
+
+- Ensure tests pass before refactoring: `pytest`- Review logs in VS Code Output panel (MCP section)
+
 - Check test command in `.refactor/config.json`
-- Automatic rollback will restore code if tests fail
 
-### Git Issues
+- Automatic rollback will restore code if tests fail### API Errors
+
+- Review operation status with `get_refactoring_status`
+
+- Verify `GOOGLE_API_KEY` is set in `mcp.json`
+
+### Git Issues- Check API key validity at Google AI Studio
+
+- Ensure network connectivity
 
 - Initialize Git repository: `git init`
-- Commit pending changes: `git commit -am "Save work"`
+
+- Commit pending changes: `git commit -am "Save work"`### Test Failures During Refactoring
+
 - Check Git status: `git status`
 
----
+- Verify backup branches are created- Ensure tests pass before refactoring
 
-## Documentation
+- Check test command in `.refactor/config.json`
 
-- **Testing Guide**: `docs/TESTING_GUIDE.md`
+### Import Errors- Automatic rollback will restore code if tests fail
+
+
+
+- Ensure all dependencies installed: `uv sync`### Git Issues
+
+- Check Python environment: `uv run python --version`
+
+- Reinstall if needed: `uv pip install -e .`- Initialize Git repository: `git init`
+
+- Commit pending changes: `git commit -am "Save work"`
+
+---- Check Git status: `git status`
+
+
+
+## Documentation---
+
+
+
+- **Testing Guide**: `docs/TESTING_GUIDE.md`## Documentation
+
 - **Quick Test Prompts**: `docs/QUICK_TEST_PROMPTS.md`
-- **API Reference**: `.github/instructions/auto_refactor.instructions.md`
 
----
+- **API Reference**: `.github/instructions/auto_refactor.instructions.md`- **Testing Guide**: `docs/TESTING_GUIDE.md`
 
-## Requirements
+- **Quick Test Prompts**: `docs/QUICK_TEST_PROMPTS.md`
 
-### Core Dependencies
+---- **API Reference**: `.github/instructions/auto_refactor.instructions.md`
 
-- mcp >= 1.2.0
+
+
+## Requirements---
+
+
+
+### Core Dependencies## Requirements
+
+
+
+- mcp >= 1.2.0### Core Dependencies
+
 - fastmcp >= 0.1.0
-- pydantic >= 2.0.0
-- gitpython >= 3.1.0
-- google-genai >= 1.0.0
-- tree-sitter >= 0.21.0
+
+- pydantic >= 2.0.0- mcp >= 1.2.0
+
+- gitpython >= 3.1.0- fastmcp >= 0.1.0
+
+- google-genai >= 1.0.0- pydantic >= 2.0.0
+
+- tree-sitter >= 0.21.0- gitpython >= 3.1.0
+
+- radon >= 6.0.0- google-genai >= 1.0.0
+
+- pytest >= 8.0.0- tree-sitter >= 0.21.0
+
 - radon >= 6.0.0
-- pytest >= 8.0.0
 
-### Supported Languages
+### Supported Languages- pytest >= 8.0.0
 
-- Python (.py)
+
+
+- Python (.py)### Supported Languages
+
 - JavaScript (.js)
-- TypeScript (.ts)
 
----
+- TypeScript (.ts)- Python (.py)
 
-## License
+- JavaScript (.js)
 
-See LICENSE file for details.
+### Supported Platforms- TypeScript (.ts)
 
----
 
-## Version History
 
-### v0.1.0 (2025-10-08)
+- Windows 10/11---
 
-- Initial release
+- macOS 10.15+
+
+- Linux (Ubuntu 20.04+)## License
+
+
+
+---See LICENSE file for details.
+
+
+
+## License---
+
+
+
+See LICENSE file for details.## Version History
+
+
+
+---### v0.1.0 (2025-10-08)
+
+
+
+## Version History- Initial release
+
 - AI-powered refactoring suggestions
-- Automatic testing and rollback
-- Suggestion management system
-- Operation tracking and history
-- Database refactoring capabilities
-- Python, JavaScript, TypeScript support
 
----
+### v0.1.0 (2025-10-08)- Automatic testing and rollback
+
+- Suggestion management system
+
+- Initial release- Operation tracking and history
+
+- AI-powered refactoring suggestions using Google Gemini- Database refactoring capabilities
+
+- Automatic testing and rollback capabilities- Python, JavaScript, TypeScript support
+
+- Suggestion management system
+
+- Operation tracking and history---
+
+- Database refactoring capabilities
+
+- Python, JavaScript, TypeScript support## Support
+
+- 646 comprehensive tests
+
+For issues, questions, or contributions:
+
+---- GitHub Issues: https://github.com/akv2011/Auto_Refactor_codebase_MCP/issues
+
+- Repository: https://github.com/akv2011/Auto_Refactor_codebase_MCP
 
 ## Support
 
-For issues, questions, or contributions:
-- GitHub Issues: https://github.com/akv2011/Auto_Refactor_codebase_MCP/issues
-- Repository: https://github.com/akv2011/Auto_Refactor_codebase_MCP
-
 ---
 
-## Acknowledgments
+For issues, questions, or contributions:
+
+- **GitHub Issues**: https://github.com/akv2011/Auto_Refactor_codebase_MCP/issues## Acknowledgments
+
+- **Repository**: https://github.com/akv2011/Auto_Refactor_codebase_MCP
+
+- **Documentation**: See `docs/` directoryBuilt with:
+
+- Model Context Protocol (MCP) by Anthropic
+
+---- FastMCP framework
+
+- Google Gemini AI
+
+## Acknowledgments- Tree-sitter for code parsing
+
+- Radon for complexity metrics
 
 Built with:
 - Model Context Protocol (MCP) by Anthropic
