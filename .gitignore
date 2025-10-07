@@ -55,3 +55,6 @@ htmlcov/
 # Auto-Refactor specific
 .taskmaster/
 *.taskmaster.json
+
+# GitHub workflows and instructions (keep local only)
+.github/
